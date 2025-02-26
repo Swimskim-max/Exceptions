@@ -1,5 +1,5 @@
 /**
- * Bank account class
+ * Bank account class creates a bank account and supports withdrawal and deposits. Will prevent
  * @author David Sanchez
  */
 
@@ -59,7 +59,7 @@ public class BankAccount {
 
 
     /**
-     * The class should have a withdraw method that takes a double amount and subtracts it from the current account balance. This method returns nothing.
+     * The class should have a withdrawal method that takes a double amount and subtracts it from the current account balance. This method returns nothing.
      * If the amount attempted to withdraw is greater than the current account balance,
      * this method will throw an InsufficientFundsException.
      * If the amount attempted to withdraw is negative, this method will throw an
@@ -73,7 +73,7 @@ public class BankAccount {
             throw new IllegalArgumentException("Amount cannot be negative");
         }
         if (withdrawalAmount > accountBalance) {
-            throw new InsufficientFundsException(accountNumber - accountBalance); //needs throws in method signature
+            throw new InsufficientFundsException(Math.abs(accountBalance - withdrawalAmount)); //needs throws in method signature
         }
         accountBalance -= withdrawalAmount;
     }
