@@ -1,4 +1,5 @@
 /**
+ * Bank account class
  * @author David Sanchez
  */
 
